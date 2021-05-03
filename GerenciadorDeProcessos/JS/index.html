@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Gerenciador de Processos</title>
+</head>
+
+<body data-spy="scroll" data-target="tabela" data-offset="1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabbable" id="tabs-707475">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active show" href="#tabelaProcessos" data-toggle="tab">Processos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#CPU" data-toggle="tab">Uso CPU</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="tab1">
+                        <div class="tab-pane fade show active" id="tabelaProcessos" role="tabpanel"
+                            aria-labelledby="tabela-tab">
+                            <div>
+                                <div class="mb-2">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"
+                                                        id="inputGroup-sizing-default">Filtro</span>
+                                                </div>
+                                                <input type="text" class="form-control" id="inputFiltro">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="spanPID">PID</span>
+                                                </div>
+                                                <input type="number" class="form-control" id="inputPID">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button type="button" onclick="finalizarProcesso()"
+                                                class="btn btn-danger">Matar
+                                            </button>
+                                            <button type="button" onclick="suspenderProcesso()"
+                                                class="btn btn-warning">Suspender </button>
+                                            <button type="button" onclick="continuarProcesso()"
+                                                class="btn btn-success">Continuar </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-3">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="spanPrioridade">Prioridade</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="inputPrioridade">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" onclick="prioridadeProcesso()"
+                                            class="btn btn-dark">Alterar
+                                            Prioriade</button>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="spanCPU">CPU</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="inputCPU">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" onclick="cpuProcesso()" class="btn btn-dark">Alterar
+                                            CPU</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12" id="tabela" class="table-responsive">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show active" id="CPU" role="tabpanel" aria-labelledby="CPU-tab">
+                            <div class="col-md-12" id="usoCPU">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script src="tabela.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
